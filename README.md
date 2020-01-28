@@ -30,7 +30,7 @@
 	  🖊️
     <a href="https://www.theodinproject.com/courses/javascript/lessons/library">Assigment</a>
     🐞
-    <a href="https://github.com/fabricio-garcia/library/issues">Report Bug</a>
+    <a href="https://github.com/fabricio-garcia/library/issues">Report a Bug</a>
     🙋‍♂️
     <a href="https://github.com/fabricio-garcia/library/issues">Request Feature</a>
   </p>
@@ -69,10 +69,6 @@
 
 👨 [Fabricio Garcia](https://github.com/fabricio-garcia)\
 👨 [Israel Laguan](https://github.com/Israel-Laguan)
-
-# License
-
-This project is licensed under the Apache 2 License - see the [LICENSE.md](LICENSE.md) file for details
 
 # 🤝 Contributing
 

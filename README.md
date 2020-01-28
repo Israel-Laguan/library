@@ -78,11 +78,13 @@ This project is licensed under the Apache 2 License - see the [LICENSE.md](LICEN
 
 Contributions, issues and feature requests are welcome!
 
-# Show your support
+# 🤗 Show your support
 
 Give a ⭐️ if you like this project!
 
 # 🏅 Acknowledgements
+
+Give a ⭐️ if you like this project!
 
 - [Microverse](https://www.microverse.org/)
 - [The Odin Project](https://www.theodinproject.com/)

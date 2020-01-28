@@ -1,6 +1,6 @@
 <!-- PROJECT SHIELDS -->
 <!--
-*** I'm using markdown "reference style" links for readability.
+*** "reference style" links are used for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
@@ -10,8 +10,8 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![Issues-open][issues-open-shield]][issues-open-url]
+[![Issues-closed][issues-closed-shield]][issues-closed-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -27,37 +27,27 @@
   <p align="center">
     Small library project created with JS
     <br />
-    <a href="https://github.com/fabricio-garcia/library/blob/master/README.md"><strong>Explore the docs 📚</strong></a>
-    <br />
-    <br />
 	  🖊️
-    <a href="https://www.theodinproject.com">Assigment</a>
-    🐛
+    <a href="https://www.theodinproject.com/courses/javascript/lessons/library">Assigment</a>
+    🐞
     <a href="https://github.com/fabricio-garcia/library/issues">Report Bug</a>
-    🙏
+    🙋‍♂️
     <a href="https://github.com/fabricio-garcia/library/issues">Request Feature</a>
   </p>
 </p>
 
-# [Collaborative Project]
+# Specifications
 
-This project has this characteristics:
-
-- Uses objects and objects constructors.
-- CRUD functionality.
-- Display stored books.
-- Store books in local storage.
-
-# Validations
-
-ESLint:
+- Use of objects and objects constructors
+- CRUD functionality
+- Display stored books
+- Store books in local storage
 
 # Features
 
-- Setup a basic VanillaJS app with a single script or few commands
-- Makes LESS ready to use with all its benefits
-- Lets us use JS modules and ES6+ available for most browsers
-- Ready made examples on CSS and Less
+- Basic VanillaJS app with a single script or few commands
+- LESS ready project ready to use with all its benefits
+- JS modules and ES6+ available for most browsers
 - Sets `stickler` on the repo
 - Sets `eslint` rules
 - Tests made with [`ESLint`](https://eslint.org/)
@@ -69,12 +59,16 @@ ESLint:
 - `npm`
 - `vscode` with _ESLint_ extension
 - Linux/GNU
-- Love and Passion for code.
+- Love and Passion for code
+
+# Live Demo
+
+[Link](#)
 
 # Authors
 
-- [Fabricio Garcia](https://github.com/fabricio-garcia)
-- [Israel Laguan](https://github.com/Israel-Laguan)
+👨 [Fabricio Garcia](https://github.com/fabricio-garcia)\
+👨 [Israel Laguan](https://github.com/Israel-Laguan)
 
 # License
 
@@ -84,28 +78,30 @@ This project is licensed under the Apache 2 License - see the [LICENSE.md](LICEN
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/js-library).
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgements
+## 🏅 Acknowledgements
 
 - [Microverse](https://www.microverse.org/)
 - [The Odin Project](https://www.theodinproject.com/)
-- [Readme header author](https://github.com/collinsugwu/Microverse201-Enumerable-Methods)
+
+## 📝 License
+
+This project is licensed under the Apache License 2.0\
+Feel free to fork this project and improve it
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/fabricio-garcia/library.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/fabricio-garcia/library?style=plastic
 [contributors-url]: https://github.com/fabricio-garcia/library/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/fabricio-garcia/library
+[forks-shield]: https://img.shields.io/github/forks/fabricio-garcia/library?style=plastic
 [forks-url]: https://github.com/fabricio-garcia/library/network/members
-[stars-shield]: https://img.shields.io/github/stars/fabricio-garcia/library
+[stars-shield]: https://img.shields.io/github/stars/fabricio-garcia/library?style=plastic
 [stars-url]: https://github.com/fabricio-garcia/library/stargazers
-[issues-shield]: https://img.shields.io/github/issues/fabricio-garcia/library
-[issues-url]: https://github.com/fabricio-garcia/library/issues
-[license-shield]: https://img.shields.io/github/license/fabricio-garcia/library
-[license-url]: https://github.com/fabricio-garcia/library/blob/master/LICENSE.txt
+[issues-open-shield]: https://img.shields.io/github/issues/fabricio-garcia/library?style=plastic
+[issues-closed-url]: https://github.com/fabricio-garcia/library/issues
+[issues-closed-shield]: https://img.shields.io/github/issues-closed/fabricio-garcia/library?style=plastic
+[issues-open-url]: https://github.com/fabricio-garcia/library/issues

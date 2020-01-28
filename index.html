@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Library</title>
-    <!-- LESS -->
-    <link rel="stylesheet/less" type="text/css" href="src/css/main.less" />
-    <script>
-      less = {
-        env: "development",
-        logLevel: 2,
-        async: false,
-        fileAsync: false,
-        poll: 1000,
-        functions: {},
-        dumpLineNumbers: "comments",
-        relativeUrls: true
-      };
-    </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
-    <script>
-      less.watch();
-    </script>
-  </head>
-  <body>
-    <main class="list" id="list">
-      
-    </main>
-    <script src="./src/js/index.js"></script>
-    <script src="./tests/issue1.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Library</title>
+  <!-- LESS -->
+  <link rel="stylesheet/less" type="text/css" href="src/css/main.less" />
+  <script>
+    less = {
+      env: "development",
+      logLevel: 2,
+      async: false,
+      fileAsync: false,
+      poll: 1000,
+      functions: {},
+      dumpLineNumbers: "comments",
+      relativeUrls: true
+    };
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+  <script>
+    less.watch();
+  </script>
+</head>
+
+<body>
+  <main class="list" id="list">
+
+  </main>
+  <h2>Library</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Read</th>
+        <th>Erase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span>Type of Food</span> Slice of Pizza</td>
+        <td><span>Calories</span> 450</td>
+        <td><span>Tasty Factor</span> 95%</td>
+        <td><input type="checkbox" name="" id=""></td>
+        <td><button>Erase</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="./src/js/index.js"></script>
+  <script src="./tests/issue1.js" type="module"></script>
+</body>
+
 </html>

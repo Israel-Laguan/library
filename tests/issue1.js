@@ -26,6 +26,7 @@ const issue1 = {
   },
 };
 
+/* TEST CASES
 console.log(issue1.myLibraryIsArray(myLibrary));
 console.log(issue1.addBookToLibraryIsFunction(addBookToLibrary));
 console.log(issue1.addBookToLibraryAddToArray());
@@ -33,3 +34,6 @@ console.log(issue1.addBookToLibraryStoresValues('Testing 1'));
 console.log(issue1.checkTitleStored('Testing 2'));
 console.log(issue1.checkPagesStored(100));
 console.log(issue1.checkReadStored(true));
+*/
+
+export default issue1;

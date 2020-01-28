@@ -1,6 +1,6 @@
 // @ts-check
 
-const myLibrary = [];
+export const myLibrary = [];
 
 /**
  * Constructor for Books belonging the Library
@@ -27,7 +27,7 @@ function Book(title, author, pages, read) {
  * @param {Boolean} read
  * @returns {Array} Library List with Books
  */
-const addBookToLibrary = (title, author, pages, read) => {
+export const addBookToLibrary = (title, author, pages, read) => {
   const book = new Book(title, author, pages, read);
   myLibrary.push(book);
   return myLibrary;

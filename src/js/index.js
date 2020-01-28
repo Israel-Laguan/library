@@ -18,6 +18,15 @@ function Book(title, author, pages, read) {
     this.read ? 'read' : 'not read'
   }.`;
 }
+
+/**
+ * Adds a Book to the Library
+ * @param {String} title 
+ * @param {String} author 
+ * @param {Number} pages 
+ * @param {Boolean} read 
+ * @returns {Array} Library List with Books
+ */
 const addBookToLibrary = (title, author, pages, read) => {
   const book = new Book(title, author, pages, read);
   myLibrary.push(book);

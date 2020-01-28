@@ -21,10 +21,10 @@ function Book(title, author, pages, read) {
 
 /**
  * Adds a Book to the Library
- * @param {String} title 
- * @param {String} author 
- * @param {Number} pages 
- * @param {Boolean} read 
+ * @param {String} title
+ * @param {String} author
+ * @param {Number} pages
+ * @param {Boolean} read
  * @returns {Array} Library List with Books
  */
 const addBookToLibrary = (title, author, pages, read) => {
@@ -32,4 +32,5 @@ const addBookToLibrary = (title, author, pages, read) => {
   myLibrary.push(book);
   return myLibrary;
 };
+
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 293, false);

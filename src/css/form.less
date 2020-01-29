@@ -8,12 +8,13 @@ summary {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: @secondary;
+  background-color: @aqua;
   color: @dark;
   .Merriweather900;
 
   &:hover{
     font-weight: 400;
+    background-color: @teal;
   }
 
   &::-webkit-details-marker {
@@ -36,10 +37,28 @@ form {
     padding-left: 30px;
   }
 
+  & #isbn{
+    background: whitesmoke url(../assets/icons/product.png) left no-repeat;
+    padding-left: 30px;
+  }
+
   & > button {
     background-color: @success;
     .buttonRound;
   }
+
+  & input[type=number]{
+    text-align:center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
 }
 
 @media (min-width: 500px) {

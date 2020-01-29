@@ -27,7 +27,6 @@
 </head>
 
 <body>
-
   <header>
     <img src="/src/assets/icons/research.png" alt="logo">
     <h1>Library</h1>
@@ -61,8 +60,22 @@
           >
         </fieldset>
         <fieldset>
+          <label>
+            ISBN:
+          </label>
+          <input type="text" name="isbn" placeholder="ISBN" minlength="9" id="isbn"
+            title="[Optional] Follow ISBN format please" pattern="/((978[\--– ])?[0-9][0-9\--– ]{10}[\--– ][0-9xX])|((978)?[0-9]{9}[0-9Xx])/"
+          >
+        </fieldset>
+        <fieldset>
           Pages:<br>
+          <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">
+            -
+          </button>
           <input type="number" min="1" max="9999" name="pages" value="0">
+          <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">
+            +
+          </button>
         </fieldset>
         <fieldset>
           <input type="checkbox" name="read"> I Have read the book already
@@ -76,6 +89,7 @@
         <tr>
           <th>Title</th>
           <th>Author</th>
+          <th>ISBN</th>
           <th>Pages</th>
           <th>Status</th>
           <th>Erase</th>

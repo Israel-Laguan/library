@@ -5,15 +5,17 @@ export const myLibrary = [];
  * Constructor for Books belonging the Library
  * @param {String} title
  * @param {String} author
+ * @param {String} isbn
  * @param {Number} pages
  * @param {Boolean} read
  */
-function Book(title, author, pages, read) {
+function Book(title = 'Test Title', author = 'Test Author', isbn = '978-3-16-148410-0', pages = 296, read = false) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = () => `${this.title} by ${this.author}, ${this.pages} pages, ${
+  this.isbn = isbn;
+  this.info = () => `${this.title} by ${this.author}, ISBN ${this.isbn}, ${this.pages} pages, ${
     this.read ? 'read' : 'not read'
   }.`;
   this.render = () => `
@@ -23,6 +25,7 @@ function Book(title, author, pages, read) {
   <td><span>Author:</span><a href="https://www.google.com/?q=%22${
   this.author
 }%22">${this.author}<a/></td>
+  <td><span>ISBN:</span>${this.isbn}</td>
   <td><span>Pages:</span>${this.pages}</td>
   <td><span>Read?:</span>${this.read ? 'Read' : 'Not read'}</td>
   <td><button>Erase</button></td>
@@ -33,12 +36,13 @@ function Book(title, author, pages, read) {
  * Adds a Book to the Library
  * @param {String} title
  * @param {String} author
+ * @param {String} isbn
  * @param {Number} pages
  * @param {Boolean} read
  * @returns {Array} Library List with Books
  */
-export const addBookToLibrary = (title, author, pages, read) => {
-  const book = new Book(title, author, pages, read);
+export const addBookToLibrary = (title, author, isbn, pages, read) => {
+  const book = new Book(title, author, isbn, Number(pages), read);
   myLibrary.push(book);
   return myLibrary;
 };
@@ -59,7 +63,7 @@ export const showList = () => {
   const list = document.getElementById('list');
   myLibrary.forEach((book, id) => {
     list.innerHTML += `
-    <tr key=${id}>${book.render()} </tr>
+    <tr key=${id}>${book.render()}</tr>
     `;
   });
 };
@@ -83,6 +87,8 @@ newBookForm.addEventListener('submit', event => {
     // @ts-ignore
     author: newBookForm.author.value,
     // @ts-ignore
+    isbn: newBookForm.isbn.value,
+    // @ts-ignore
     pages: newBookForm.pages.value,
     // @ts-ignore
     read: newBookForm.read.checked,
@@ -97,7 +103,7 @@ newBookForm.addEventListener('submit', event => {
     `;
     return;
   }
-  addBookToLibrary(data.title, data.author, data.pages, data.read);
+  addBookToLibrary(data.title, data.author, data.isbn, data.pages, data.read);
   showList();
   // @ts-ignore
   newBookForm.reset();

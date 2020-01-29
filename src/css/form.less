@@ -1,39 +1,55 @@
-
-details{
-    margin: auto;
-    border-radius: 10px;
+details {
+  margin: auto;
+  border-radius: 10px;
 }
 
-summary{
-    border-radius: 10px;
-    text-align: center;
-    background-color: @secondary;
-    color: @dark;
+summary {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @secondary;
+  color: @dark;
+  .Merriweather900;
 
-    &::-webkit-details-marker {
-        display: none;
-    }
+  &:hover{
+    font-weight: 400;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
 }
 
-form{
-    & input{
-        border: none;
-    }
+form {
+  & input {
+    border: none;
+  }
 
-    &>button{
-        background-color: @success;
-        .buttonRound
-    }
+  & #title {
+    background: whitesmoke url(../assets/icons/open-book.png) left no-repeat;
+    padding-left: 30px;
+  }
+
+  & #author{
+    background: whitesmoke url(../assets/icons/ink.png) left no-repeat;
+    padding-left: 30px;
+  }
+
+  & > button {
+    background-color: @success;
+    .buttonRound;
+  }
 }
 
 @media (min-width: 500px) {
-    details{
-        width: 50%;
-    }
+  details {
+    width: 50%;
+  }
 }
 
 @media (min-width: 700px) {
-    details{
-        width: 30%;
-    }
+  details {
+    width: 30%;
+  }
 }

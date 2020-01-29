@@ -27,40 +27,46 @@
 </head>
 
 <body>
-  
+
   <header>
+    <img src="/src/assets/icons/research.png" alt="logo">
     <h1>Library</h1>
   </header>
   <div class="hero-image">
     <div class="hero-text">
       <h1>What is your next Book?</h1>
-      <p>Share what books you read</p>
+      <p>Share what books you read
+      </p>
     </div>
-  </div> 
+  </div>
   <main>
     <section class="notice" id="notice"></section>
     <section class="alert" id="alert"></section>
     <details>
-      <summary>+ New Book</summary>
-      <form>        
+      <summary><img src="/src/assets/icons/bookadd.png" alt="add book"> New Book</summary>
+      <form id="new-book-form">
         <fieldset>
           <label>
             Title:
           </label>
-          <input type="text" name="title" placeholder="The name of the Book" id="title">
+          <input type="text" name="title" placeholder="The name of the Book" minlength="2" id="title"
+            title="No empty space empty and use Title Case" pattern="^(?:[A-Z][^\s]*\s?)+$"
+          >
         </fieldset>
         <fieldset>
           <label>
             Author:
           </label>
-          <input type="text" name="author" placeholder="The one that wrote it">
-        </fieldset>        
-        <fieldset>
-          Pages:<br>
-          <input type="number" min="0" max="9999" name="pages" value="0">
+          <input type="text" name="author" placeholder="The one that wrote it" minlength="2" id="author"
+            title="No empty space empty and use Title Case" pattern="^(?:[A-Z][^\s]*\s?)+$"
+          >
         </fieldset>
         <fieldset>
-          <input type="checkbox" name="pages"> I Have you read the book already
+          Pages:<br>
+          <input type="number" min="1" max="9999" name="pages" value="0">
+        </fieldset>
+        <fieldset>
+          <input type="checkbox" name="read"> I Have read the book already
         </fieldset>
         <button type="submit">Add Book</button>
       </form>

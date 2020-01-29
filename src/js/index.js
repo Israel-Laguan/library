@@ -48,9 +48,11 @@ export const addBookToLibrary = (title, author, pages, read) => {
  */
 export const showList = () => {
   if (myLibrary.length === 0) {
-    document.getElementById('notice').innerHTML = `
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <p><b>Aware!:</b> No books on Library! ⬇ Add here</p>
+    document.getElementById('notification').innerHTML = `
+    <div class="notice" id="notice">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <p><b>Aware!:</b> No books on Library! ⬇ Add here</p>
+    </div>
     `;
     return;
   }
@@ -87,9 +89,11 @@ newBookForm.addEventListener('submit', event => {
   };
   const { error } = validateForm(data);
   if (error) {
-    document.getElementById('alert').innerHTML = `
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <p><b>Danger!:</b> ${error}</p>
+    document.getElementById('notification').innerHTML = `
+    <div class="alert" id="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <p><b>Danger!:</b> ${error}</p>
+    </div>
     `;
     return;
   }
@@ -97,9 +101,10 @@ newBookForm.addEventListener('submit', event => {
   showList();
   // @ts-ignore
   newBookForm.reset();
-  document.getElementById('alert').innerText = '';
-  document.getElementById('notice').innerHTML = `
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <p><b>Success!:</b> Book Added!</p>
+  document.getElementById('notification').innerHTML = `
+  <div class="notice" id="notice">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p><b>Success!:</b> Book Added!</p>
+  </div>
   `;
 });

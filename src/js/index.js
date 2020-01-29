@@ -18,10 +18,10 @@ function Book(title, author, pages, read) {
     this.read ? 'read' : 'not read'
   }.`;
   this.render = () => `
-  <td>${this.title}</td>
-  <td>${this.author}</td>
-  <td>${this.pages}</td>
-  <td>${this.read ? 'Read' : 'Not read'}</td>
+  <td><span>Title:</span>${this.title}</td>
+  <td><span>Author:</span>${this.author}</td>
+  <td><span>Pages:</span>${this.pages}</td>
+  <td><span>Read?:</span>${this.read ? 'Read' : 'Not read'}</td>
   <td><button>Erase</button></td>
   `;
 }
@@ -40,10 +40,10 @@ export const addBookToLibrary = (title, author, pages, read) => {
   return myLibrary;
 };
 
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 293, false);
-addBookToLibrary('The Lord of The Rings', 'J.R.R. Tolkien', 646, true);
 
 window.addEventListener('load', () => {
+  addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 293, false);
+  addBookToLibrary('The Lord of The Rings', 'J.R.R. Tolkien', 646, true);
   const list = document.getElementById('list');
   myLibrary.forEach((book, id) => {
     list.innerHTML += `

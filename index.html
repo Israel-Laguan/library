@@ -27,27 +27,59 @@
 </head>
 
 <body>
+  
+  <header>
+    <h1>Library</h1>
+  </header>
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>What is your next Book?</h1>
+      <p>Share what books you read</p>
+    </div>
+  </div> 
   <main>
+    <section class="notice" id="notice"></section>
+    <section class="alert" id="alert"></section>
+    <details>
+      <summary>+ New Book</summary>
+      <form>        
+        <fieldset>
+          <label>
+            Title:
+          </label>
+          <input type="text" name="title" placeholder="The name of the Book" id="title">
+        </fieldset>
+        <fieldset>
+          <label>
+            Author:
+          </label>
+          <input type="text" name="author" placeholder="The one that wrote it">
+        </fieldset>        
+        <fieldset>
+          Pages:<br>
+          <input type="number" min="0" max="9999" name="pages" value="0">
+        </fieldset>
+        <fieldset>
+          <input type="checkbox" name="pages"> I Have you read the book already
+        </fieldset>
+        <button type="submit">Add Book</button>
+      </form>
+    </details>
 
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Pages</th>
+          <th>Status</th>
+          <th>Erase</th>
+        </tr>
+      </thead>
+      <tbody id="list"></tbody>
+    </table>
   </main>
-  <h2>Library</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Pages</th>
-        <th>Status</th>
-        <th>Erase</th>
-      </tr>
-    </thead>
-    <tbody id="list">
-     
-    </tbody>
-  </table>
-  <script src="./src/js/index.js"></script>
-  <script src="./tests/issue2.js" type="module"></script>
+  <script src="./src/js/index.js" type="module"></script>
 </body>
 
 </html>

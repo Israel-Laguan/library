@@ -1,5 +1,4 @@
 // @ts-check
-
 export const myLibrary = [];
 
 /**
@@ -48,6 +47,13 @@ export const addBookToLibrary = (title, author, pages, read) => {
  * render myLibrary on HTML
  */
 export const showList = () => {
+  if (myLibrary.length === 0) {
+    document.getElementById('notice').innerHTML = `
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p><b>Aware!:</b> No books on Library! ⬇ Add here</p>
+    `;
+    return;
+  }
   const list = document.getElementById('list');
   myLibrary.forEach((book, id) => {
     list.innerHTML += `
@@ -81,11 +87,19 @@ newBookForm.addEventListener('submit', event => {
   };
   const { error } = validateForm(data);
   if (error) {
-    document.getElementById('alert').innerText = error;
+    document.getElementById('alert').innerHTML = `
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p><b>Danger!:</b> ${error}</p>
+    `;
     return;
   }
   addBookToLibrary(data.title, data.author, data.pages, data.read);
   showList();
   // @ts-ignore
   newBookForm.reset();
+  document.getElementById('alert').innerText = '';
+  document.getElementById('notice').innerHTML = `
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <p><b>Success!:</b> Book Added!</p>
+  `;
 });

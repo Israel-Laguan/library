@@ -5,16 +5,33 @@ main {
 }
 
 .alert {
-  background-color: palevioletred;
-  grid-area: alert;
+  background-color: @danger;
+  text-align: center;
 }
 
 .notice {
-  grid-area: notice;
-  background-color: powderblue;
+    background-color: @notice;
+  text-align: center;
 }
 
-.content {
-  grid-area: content;
-  background-color: tomato;
+.notice>p,.alert>p{
+    padding-left: 20px;
+    color: white;
 }
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

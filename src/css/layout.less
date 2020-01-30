@@ -4,24 +4,30 @@ main {
   .Merriweather400;
 }
 
-.alert {
-  background-color: @danger;
+.notification {
   text-align: center;
+  & p{
+    color: white;
+    padding-left: 20px;
+  }
 }
 
 .notice {
   background-color: @notice;
-  text-align: center;
 }
 
-.notice > p,
-.alert > p {
-  padding-left: 20px;
-  color: white;
+.alert {
+  background-color: @alert;
 }
+
+.warning {
+  background-color: @warning;
+}
+
 
 /* The close button */
 .closebtn {
+  margin-right: 20px;
   margin-left: 15px;
   color: white;
   font-weight: bold;

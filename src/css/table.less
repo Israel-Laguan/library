@@ -6,6 +6,9 @@ table {
 table tr {
   background: white;
   border-bottom: 1px solid;
+  &:hover{
+    background-color: rgba(1, 1, 1, 0.2);
+  }
 }
 table th,
 table td {
@@ -24,8 +27,8 @@ table td span {
   left: 0;
 }
 
-table button {
-  background-color: @danger;
+table button{
+  background-color: @warning;
   .buttonRound;
 }
 

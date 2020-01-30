@@ -54,11 +54,12 @@ export const viewT = (
   <td><span>Pages:</span>${pages}</td>
   <td><span>Read?:</span>
     <input type='checkbox' id="update-read-${isbn}"
-    ${read ? 'checked' : ''}>${read ? ' Read' : ' Not read'}
+    ${read ? 'checked' : ''}>
+    
   </td>
   <td>
     <button
-      class="erase-button" 
+      class="erase-button"
       id="erase-${isbn}"
     >
       Erase

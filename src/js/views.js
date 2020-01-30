@@ -78,6 +78,8 @@ const addRemoveEvent = (book) => {
   }
 };
 
+
+
 const addUpdateEvent = (book, checked) => {
   try {
     const newBook = { ...book, read: checked };
@@ -99,7 +101,6 @@ const addUpdateEvent = (book, checked) => {
   }
 };
 
-
 export const showLibrary = () => {
   try {
     const { error, ok, data } = getAll(storage);
@@ -117,6 +118,7 @@ export const showLibrary = () => {
         }
         // @ts-ignore
         if (event.srcElement.id === `update-read-${book.isbn}`) {
+          
           // @ts-ignore
           return addUpdateEvent(book, event.srcElement.checked);
         }

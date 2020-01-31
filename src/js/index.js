@@ -52,8 +52,9 @@ const viewT = (
   <td><span>ISBN:</span>${isbn}</td>
   <td><span>Pages:</span>${pages}</td>
   <td><span>Read?:</span>
-    <input type='checkbox' id="update-read-${isbn}"
-    ${read ? 'checked' : ''}>
+    <button id="update-read-${isbn}" status="${read}">
+      ${read ? 'Read' : 'Not Read'}
+    </button> 
   </td>
   <td>
     <button
@@ -108,6 +109,8 @@ const warningT = (caution) => `
 
 /**
  * Constructor for Books belonging the Library
+ *
+ * [REQUIREMENT]
  * @param {String} title Creative Identifier for the book
  * @param {String} author Name of the one that wroted the book
  * @param {String} isbn Unique ID for the book
@@ -308,6 +311,12 @@ const verifyLibrary = ({ error, ok, data }) => {
   }
 };
 
+/**
+ * When you press Erase Button, it erase
+ * the Book from localStorage
+ * @param {Book} book
+ * @return {Book[]}
+ */
 const addRemoveEvent = (book) => {
   const bookRow = document.getElementById(book.isbn);
   try {
@@ -330,10 +339,16 @@ const addRemoveEvent = (book) => {
   }
 };
 
-
-const addUpdateEvent = (book, checked) => {
+/**
+ * When you press Read | Not Read Button,
+ * it update localStorage read field
+ * @param {Book} book
+ * @param {Boolean} status
+ * @return {Book[]}
+ */
+const addUpdateEvent = (book, status) => {
   try {
-    const newBook = { ...book, read: checked };
+    const newBook = { ...book, read: status };
     const { error, ok, data } = update(book, newBook, storage);
     if (error) {
       showNotification('warning', error);
@@ -352,7 +367,12 @@ const addUpdateEvent = (book, checked) => {
   }
 };
 
-const showLibrary = () => {
+/**
+ * Show the info from Storage into HTML
+ *
+ * [REQUIREMENT]
+ */
+const render = () => {
   try {
     const { error, ok, data } = getAll(storage);
     const myLibrary = verifyLibrary({ error, ok, data });
@@ -363,14 +383,20 @@ const showLibrary = () => {
       <tr key=${id} id="${book.isbn}">${book.view}</tr>
       `;
       document.body.addEventListener('click', (event) => {
+        const button = event.srcElement;
         // @ts-ignore
-        if (event.srcElement.id === `erase-${book.isbn}`) {
+        if (button.id === `erase-${book.isbn}`) {
           return addRemoveEvent(book);
         }
         // @ts-ignore
-        if (event.srcElement.id === `update-read-${book.isbn}`) {
+        if (button.id === `update-read-${book.isbn}`) {
           // @ts-ignore
-          return addUpdateEvent(book, event.srcElement.checked);
+          const { status } = button;
+          const thisbutton = document.getElementById(`update-read-${book.isbn}`);
+          thisbutton.innerText = !status ? 'Read' : 'Not Read';
+          // @ts-ignore
+          thisbutton.status = !status;
+          return addUpdateEvent(book, !status);
         }
         return [];
       });
@@ -380,7 +406,17 @@ const showLibrary = () => {
   }
 };
 
-const addBook = (title, author, isbn, pages, read) => {
+/**
+ * Creates a Book and adds it to localStorage
+ *
+ * [REQUIREMENT]
+* @param {String} title Creative Identifier for the book
+ * @param {String} author Name of the one that wroted the book
+ * @param {String} isbn Unique ID for the book
+ * @param {Number} pages Integer with number of pages of book
+ * @param {Boolean} read If the user already read the book
+ */
+const addBookToLibrary = (title, author, isbn, pages, read) => {
   try {
     const book = new Book(title, author, isbn, pages, read);
     const { error, ok, data } = add(book, storage);
@@ -394,7 +430,7 @@ const addBook = (title, author, isbn, pages, read) => {
       return [];
     }
     showNotification('notice', 'Book Added!');
-    showLibrary();
+    render();
     return data;
   } catch (error) {
     showNotification('warning', error.message);
@@ -402,13 +438,15 @@ const addBook = (title, author, isbn, pages, read) => {
   }
 };
 
-window.addEventListener('load', () => {
-  showLibrary();
-});
-
+/**
+ * Check if data from Form is valid
+ * @param {Object} formData Data from Form
+ * @return {CRUDResponse} Object with response
+ */
 const validateForm = (formData) => {
   if (!formData.title) return { error: 'Title is empty' };
   if (!formData.author) return { error: 'Author is empty' };
+  if (!formData.isbn) return { error: 'ISBN is empty' };
   return {};
 };
 
@@ -432,8 +470,12 @@ newBookForm.addEventListener('submit', event => {
     showNotification('warning', error);
     return [];
   }
-  const result = addBook(data.title, data.author, data.isbn, data.pages, data.read);
+  const result = addBookToLibrary(data.title, data.author, data.isbn, data.pages, data.read);
   // @ts-ignore
   if (!result.length < 1) newBookForm.reset();
   return result;
+});
+
+window.addEventListener('load', () => {
+  render();
 });

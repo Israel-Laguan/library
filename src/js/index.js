@@ -38,7 +38,7 @@ const viewT = (
     href="https://www.google.com/?q=%22${title}+by+${author}%22&as_filetype=pdf" 
     target="_blank" rel="noopener noreferrer"
     >
-    ${title}
+      ${title}
     </a>
   </td>
   <td><span>Author:</span>
@@ -46,13 +46,13 @@ const viewT = (
     href="https://www.google.com/?q=%22${author}%22" 
     target="_blank" rel="noopener noreferrer"
     >
-    ${author}
+      ${author}
     <a/>
   </td>
   <td><span>ISBN:</span>${isbn}</td>
   <td><span>Pages:</span>${pages}</td>
   <td><span>Read?:</span>
-    <button id="update-read-${isbn}" status="${read}">
+    <button id="update-read-${isbn}" value="${read}">
       ${read ? 'Read' : 'Not Read'}
     </button> 
   </td>
@@ -391,12 +391,12 @@ const render = () => {
         // @ts-ignore
         if (button.id === `update-read-${book.isbn}`) {
           // @ts-ignore
-          const { status } = button;
+          const { value } = button;
           const thisbutton = document.getElementById(`update-read-${book.isbn}`);
-          thisbutton.innerText = !status ? 'Read' : 'Not Read';
+          thisbutton.innerText = value !== 'true' ? 'Read' : 'Not Read';
           // @ts-ignore
-          thisbutton.status = !status;
-          return addUpdateEvent(book, !status);
+          thisbutton.value = value !== 'true';
+          return addUpdateEvent(book, value !== 'true');
         }
         return [];
       });

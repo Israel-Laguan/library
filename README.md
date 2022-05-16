@@ -16,8 +16,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://www.microverse.org/">
-    <img src="doc/microverse.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Israel-Laguan/library">
+    <img src="https://user-images.githubusercontent.com/67714964/168572409-62b72234-84b3-452b-907d-1974f96e2902.jpg" alt="Logo" width="380" height="280">
   </a>
 
   <h1 align="center">
@@ -68,6 +68,7 @@
 # Authors
 
 👨 [Fabricio Garcia](https://github.com/fabricio-garcia)\
+
 <table style="width:100%">
   <tr>
     <td>

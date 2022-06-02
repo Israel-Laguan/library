@@ -6,7 +6,8 @@
   "scripts": {
     "start": "serve .",
     "test": "eslint .",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix",
+    "deploy": "gh-pages -d ."
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,8 @@
   },
   "dependencies": {
     "gh-pages": "^4.0.0"
+  },
+  "directories": {
+    "doc": "doc"
   }
 }

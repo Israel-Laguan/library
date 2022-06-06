@@ -63,7 +63,7 @@
 
 # Live Demo
 
-[Link](https://fabricio-garcia.github.io/library/)
+[Link](https://israel-laguan.github.io/library/)
 
 # Authors
 

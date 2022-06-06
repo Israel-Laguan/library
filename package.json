@@ -6,7 +6,8 @@
   "scripts": {
     "start": "serve .",
     "test": "eslint .",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix",
+    "deploy": "gh-pages -d ."
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,11 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  },
+  "directories": {
+    "doc": "doc"
   }
 }

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,900&display=swap');
+
+.Merriweather400 {
+  font-family: 'Merriweather', serif;
+}
+
+.Merriweather900 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+}
+
+// https://clrs.cc/
+@primary: #001f3f;
+@secondary: #ffdc00;
+@dark: #111111;
+@success: #2ecc40;
+@warning: #ff4136;
+@alert: #ff851b;
+@notice: #0074d9;
+@aqua: #7FDBFF;
+@teal: #39CCCC;
+
+.buttonRound {
+  border-radius: 10px;
+  color: white;
+  margin: 10px auto;
+  padding: 2px 10px;
+  .Merriweather400;
+
+  &:hover {
+    .Merriweather900;
+  }
+}

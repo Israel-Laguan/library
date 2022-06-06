@@ -1,0 +1,44 @@
+main {
+  max-width: 900px;
+  margin: 10px auto;
+  .Merriweather400;
+}
+
+.notification {
+  text-align: center;
+  & p{
+    color: white;
+    padding-left: 20px;
+  }
+}
+
+.notice {
+  background-color: @notice;
+}
+
+.alert {
+  background-color: @alert;
+}
+
+.warning {
+  background-color: @warning;
+}
+
+
+/* The close button */
+.closebtn {
+  margin-right: 20px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}

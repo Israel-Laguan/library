@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#001f3f">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="src/manifest.json">
+  <title>Library</title>
+  <!-- LESS -->
+  <link rel="stylesheet/less" type="text/css" href="src/css/main.less" />
+  <script>
+    less = {
+      env: "development",
+      logLevel: 2,
+      async: false,
+      fileAsync: false,
+      poll: 1000,
+      functions: {},
+      dumpLineNumbers: "comments",
+      relativeUrls: true
+    };
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+  <script>
+    less.watch();
+  </script>
+</head>
+
+<body>
+  <header>
+    <img src="./src/assets/icons/research.png" alt="logo">
+    <h1>Library</h1>
+  </header>
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>What is your next Book?</h1>
+      <p>Share what books you read
+      </p>
+    </div>
+  </div>
+  <main>
+    <section class="notification" id="notification"></section>
+    <details>
+      <summary><img src="./src/assets/icons/bookadd.png" alt="add book"> New Book</summary>
+      <form id="new-book-form">
+        <fieldset>
+          <label>
+            Title:
+          </label>
+          <input type="text" name="title" placeholder="The name of the Book" minlength="2" id="title"
+            title="No empty space empty and use Title Case" pattern="^(?:[A-Z][^\s]*\s?)+$"
+          >
+        </fieldset>
+        <fieldset>
+          <label>
+            Author:
+          </label>
+          <input type="text" name="author" placeholder="The one that wrote it" minlength="2" id="author"
+            title="No empty space empty and use Title Case" pattern="^(?:[A-Z][^\s]*\s?)+$"
+          >
+        </fieldset>
+        <fieldset>
+          <label>
+            ISBN:
+          </label>
+          <input type="text" name="isbn" placeholder="ISBN" minlength="9" id="isbn"
+            title="[Optional] Follow ISBN format please" pattern="(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})"
+          >
+        </fieldset>
+        <fieldset>
+          Pages:<br>
+          <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">
+            -
+          </button>
+          <input type="number" min="1" max="9999" name="pages" value="0">
+          <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">
+            +
+          </button>
+        </fieldset>
+        <fieldset>
+          <input type="checkbox" name="read"> I Have read the book already
+        </fieldset>
+        <button type="submit">Add Book</button>
+      </form>
+    </details>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Pages</th>
+          <th>Status</th>
+          <th>Erase</th>
+        </tr>
+      </thead>
+      <tbody id="list"></tbody>
+    </table>
+  </main>
+  <script src="./src/js/index.js" type="module">
+  </script>
+
+</body>
+
+</html>
